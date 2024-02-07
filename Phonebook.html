@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="Phonebook.css">
+</head>
+
+<body>
+    <div class="bg-container">
+        <div>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="#">PhoneBook</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse d-flex flex-row justify-content-end" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link active" href="#addContact">Add a contact</a>
+                        <a class="nav-link active" href="#update-Container">Update</a>
+                        <a class="nav-link active" href="#updateContainer">Search a contact</a>
+                        <a class="nav-link active" href="#deleteContainer">Delete</a>
+                    </div>
+                </div>
+        </div>
+
+        </nav>
+        <div class="container " id="addContact">
+            <h1>Add a Contact</h1>
+            <div id="contact-form">
+                <label for="name">Contact Name:</label>
+                <input type="text" id="name" placeholder="Enter contact name" class="input1">
+
+                <label for="phone">Phone Number:</label>
+                <input type="text" id="phone" placeholder="Enter phone number" class="input1">
+
+                <label for="email">Email Address:</label>
+                <input type="text" id="email" placeholder="Enter email address" class="input1">
+
+                <button onclick="addContact()">Add Contact</button>
+            </div>
+
+            <div id="contact-list">
+                <h2>Contact List</h2>
+                <table id="contacts" border="3" cellpadding="10" cellspacing="5">
+
+                </table>
+            </div>
+        </div>
+
+
+        <div class="container" id="updateContainer">
+            <h1>Search a contact</h1>
+
+            <label for="cn">Name:</label>
+            <input type="text" id="cn" placeholder="Enter the name here" class="input1">
+
+            <button onclick="changeContact()" class="btn-primary">Display Contact</button>
+            <p id="ChangePara"></p>
+        </div>
+
+        <div class="container" id="deleteContainer">
+            <h1>Delete a Contact</h1>
+
+            <label for="cn1">Name:</label>
+            <input type="text" id="cn1" placeholder="Enter the name here" class="input1">
+
+            <button onclick="deletion()" class="btn-danger">Delete Contact</button>
+            <p id="deletePara"></p>
+        </div>
+
+        <div class="container" id="update-Container">
+            <h1>Update a contact</h1>
+
+
+            <label for="cn2">Enter Name to Update:</label>
+            <input type="text" id="cn2" placeholder="Enter the name here" class="input1">
+
+            <div class="container" id="checkBox">
+                <div class="row">
+                    <div class="col-12">
+                        <input type="checkbox" id="updateName"> <label for="updateName">Update Name</label>
+                    </div>
+                    <div class="col-12">
+                        <input type="checkbox" id="updatePhone"> <label for="updatePhone">Update Phone</label>
+                    </div>
+                    <div class="col-12">
+                        <input type="checkbox" id="updateEmail"> <label for="updateEmail">Update Email</label>
+                    </div>
+                </div>
+            </div>
+            <div id="checking">
+
+            </div>
+
+
+            <button onclick="update()" class="btn btn-success">Update Contact</button>
+            <p id="updatePara"></p>
+            
+        </div>
+    </div>
+    
+    <script src="Phonebook.js"></script>
+</body>
+</html>
